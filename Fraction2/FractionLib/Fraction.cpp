@@ -18,7 +18,7 @@ Fraction::Fraction(int num, int denom) : numenator(num), denomenator(denom) {
 	reduce();
 }
 
-// 
+// reduce
 void Fraction::reduce() {
 	if (denomenator < 0) {
 		numenator = -numenator;
@@ -146,6 +146,9 @@ std::istream& operator >>(std::istream& is, Fraction& rhs) {
 	return is;
 }
 
+/*
+member operation assignment functions (Fraction += Fraction(int))
+*/
 Fraction& Fraction::operator+=(const Fraction& rhs) {
 	(*this) = (*this) + rhs;
 	reduce();
